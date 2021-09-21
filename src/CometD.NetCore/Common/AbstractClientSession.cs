@@ -14,18 +14,13 @@ namespace CometD.NetCore.Common
     public abstract class AbstractClientSession : IClientSession
     {
         private readonly ConcurrentDictionary<string, object> _attributes = new ConcurrentDictionary<string, object>();
-        private readonly ThreadSafeList<IExtension> _extensions = new ThreadSafeList<IExtension>();
+        private readonly ConcurrentBag<IExtension> _extensions = new ();
         private int _batch;
         private int _idGen;
 
         public void AddExtension(IExtension extension)
         {
             _extensions.Add(extension);
-        }
-
-        public void RemoveExtension(IExtension extension)
-        {
-            _extensions.Remove(extension);
         }
 
         public abstract void Handshake();
