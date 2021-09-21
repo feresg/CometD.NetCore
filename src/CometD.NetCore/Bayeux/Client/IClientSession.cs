@@ -17,13 +17,6 @@ namespace CometD.NetCore.Bayeux.Client
         /// </seealso>
         void AddExtension(IExtension extension);
 
-        /// <summary> Removes an extension from this session.</summary>
-        /// <param name="extension">the extension to remove.
-        /// </param>
-        /// <seealso cref="AddExtension(IExtension)">
-        /// </seealso>
-        void RemoveExtension(IExtension extension);
-
         /// <summary> <p>Equivalent to {@link #handshake(Map) handshake(null)}.</p></summary>
         void Handshake();
 
